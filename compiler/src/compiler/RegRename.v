@@ -747,7 +747,7 @@ Section RegAlloc.
     - (* @exec.call *)
       rename l into lH.
       unfold envs_related in *.
-      edestruct H as [p R]; [eassumption|].
+      edestruct (H) as [p R]; [eassumption|].
       destruct p as [[params' rets'] body'].
       unfold rename_fun in R.
       simp.

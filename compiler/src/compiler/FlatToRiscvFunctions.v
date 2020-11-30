@@ -569,7 +569,7 @@ Section Proofs.
     | |- context [ {| getRegs := ?l |} ] =>
       pose proof (@map.getmany_of_list_exists _ _ _ l valid_register (list_union Z.eqb (modVars_as_list Z.eqb body) argnames)) as P
     end.
-    edestruct P as [newvalues P2]; clear P.
+    edestruct P as [newvalues P2]; try clear P.
     { eapply Forall_impl; cycle 1.
       - eapply union_Forall.
         * eapply modVars_as_list_valid_FlatImp_var. assumption.

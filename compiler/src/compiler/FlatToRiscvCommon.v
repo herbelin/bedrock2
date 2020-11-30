@@ -943,7 +943,7 @@ Ltac subst_load_bytes_for_eq :=
     let P := fresh "P" in
     epose proof (@subst_load_bytes_for_eq _ _ _ _ _ _ _ _ _ Load) as P;
     let Q := fresh "Q" in
-    edestruct P as [Q ?]; clear P; [ecancel_assumption|]
+    edestruct P as [Q ?]; [ecancel_assumption|]
   end.
 
 Ltac simulate'_step :=
